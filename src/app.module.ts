@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TaskModule } from './tasks/tasks.module';
-import { TaskExecutionModule } from './tasks-execution/tasks-execution.module';
+import { TasksModule } from './tasks/tasks.module';
+import { TasksExecutionModule } from './tasks-execution/tasks-execution.module';
 
 @Module({
-  imports: [TaskModule, TaskExecutionModule],
+  imports: [TasksModule, TasksExecutionModule],
   controllers: [],
   providers: [],
 })
