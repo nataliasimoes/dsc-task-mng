@@ -1,20 +1,27 @@
 import { Injectable } from '@nestjs/common';
+import { TasksRepository } from './tasks.repository';
 
 @Injectable()
 export class TasksService {
+  constructor(private tasksRepository: TasksRepository) {}
+
   getAllTasks() {
-    return 'This action returns all tasks';
+    return this.tasksRepository.getAllTasks();
   }
 
-  getTaskById(id: string) {
-    return `This action returns a task with id ${id}`;
+  getTaskById(id: number) {
+    return this.tasksRepository.getTaskById(id);
   }
 
   createTask(name) {
-    return 'Creating a new task with name: ' + name;
+    return this.tasksRepository.createTask(name);
   }
 
-  updateTask(id: string, name) {
-    return `Updating a task with id ${id} and name ${name}`;
+  updateTask(id: number, name) {
+    return this.tasksRepository.updateTask(id, name);
+  }
+
+  deleteTask(id: number) {
+    return this.tasksRepository.deleteTask(id);
   }
 }
