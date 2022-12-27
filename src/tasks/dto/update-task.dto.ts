@@ -1,5 +1,4 @@
-export class Task {
-  id: number;
+export class updateTaskDTO {
   name: string;
   description: string;
 }
